@@ -16,16 +16,10 @@ const QuizGenerator = () => {
   const handleGenerateQuiz = async (formData) => {
     try {
       setIsLoading(true);
-      // For demo purposes, we'll use a mock response instead of real API
-      // In a real application, you would call the API
-      // const quizData = await generateQuiz(formData);
       
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Mock quiz data
-      const mockQuizData = getMockQuiz(formData);
-      setQuiz(mockQuizData);
+      // Call the actual generateQuiz function from aiService
+      const quizData = await generateQuiz(formData);
+      setQuiz(quizData);
       
       toast({
         title: "Quiz Generated Successfully",
@@ -35,7 +29,7 @@ const QuizGenerator = () => {
       console.error('Error generating quiz:', error);
       toast({
         title: "Error Generating Quiz",
-        description: "Please try again later.",
+        description: error.message || "Please try again later.",
         variant: "destructive",
       });
     } finally {
@@ -113,35 +107,6 @@ const QuizGenerator = () => {
       </footer>
     </div>
   );
-};
-
-// Mock quiz generation function for demo purposes
-const getMockQuiz = (formData) => {
-  const { subject, educationLevel, questionCount, difficulty } = formData;
-  
-  const questions = [];
-  for (let i = 0; i < questionCount; i++) {
-    questions.push({
-      question: `Sample ${subject} question #${i + 1} for ${educationLevel} level (${difficulty} difficulty)`,
-      answers: [
-        `Answer option A for question ${i + 1}`,
-        `Answer option B for question ${i + 1}`,
-        `Answer option C for question ${i + 1}`,
-        `Answer option D for question ${i + 1}`
-      ],
-      correctAnswerIndex: Math.floor(Math.random() * 4),
-      explanation: `This is an explanation for question ${i + 1}. In a real quiz, this would contain educational content explaining why the correct answer is right and why the others are wrong.`
-    });
-  }
-  
-  return {
-    title: `${subject} Quiz (${educationLevel} Level)`,
-    description: `A ${difficulty} difficulty quiz on ${subject} for ${educationLevel} students.`,
-    subject,
-    difficulty,
-    educationLevel,
-    questions
-  };
 };
 
 export default QuizGenerator;
