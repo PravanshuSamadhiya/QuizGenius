@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import TopicForm from '@/components/TopicForm';
@@ -16,16 +15,10 @@ const TopicExplainer = () => {
   const handleExplainTopic = async (formData) => {
     try {
       setIsLoading(true);
-      // For demo purposes, we'll use a mock response instead of real API
-      // In a real application, you would call the API
-      // const explanationData = await explainTopic(formData);
       
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
-      // Mock explanation data
-      const mockExplanationData = getMockExplanation(formData);
-      setExplanation(mockExplanationData);
+      // Actually call the explainTopic function from aiService
+      const explanationData = await explainTopic(formData);
+      setExplanation(explanationData);
       
       toast({
         title: "Topic Explanation Generated",
@@ -35,7 +28,7 @@ const TopicExplainer = () => {
       console.error('Error explaining topic:', error);
       toast({
         title: "Error Generating Explanation",
-        description: "Please try again later.",
+        description: error.message || "Please try again later.",
         variant: "destructive",
       });
     } finally {
@@ -113,74 +106,6 @@ const TopicExplainer = () => {
       </footer>
     </div>
   );
-};
-
-// Mock explanation generation function for demo purposes
-const getMockExplanation = (formData) => {
-  const { topic, educationLevel, explanationStyle } = formData;
-  
-  return {
-    title: `Understanding ${topic}`,
-    description: educationLevel ? `A ${explanationStyle} explanation at the ${educationLevel} level` : `A ${explanationStyle} explanation`,
-    topic,
-    educationLevel,
-    content: [
-      {
-        title: 'Introduction',
-        paragraphs: [
-          `${topic} is an important concept that has significant implications in various fields. This explanation will break down the fundamentals and help you understand its key aspects.`,
-          `In simple terms, ${topic} refers to a process/concept that involves several interconnected elements and principles. We'll explore each of these in detail.`
-        ]
-      },
-      {
-        title: 'Core Concepts',
-        paragraphs: [
-          `The first key concept of ${topic} involves understanding its fundamental principles and how they operate in different contexts.`,
-          `Another important aspect is recognizing the historical development and evolution of ${topic} over time, which has led to our current understanding.`,
-          `The theoretical framework surrounding ${topic} provides a structured way to analyze and predict related phenomena.`
-        ]
-      },
-      {
-        title: 'Applications and Significance',
-        paragraphs: [
-          `${topic} has numerous real-world applications, including in fields such as science, technology, and everyday life.`,
-          `Understanding ${topic} is valuable because it enables us to explain, predict, and potentially control various related processes and outcomes.`,
-          `Recent advancements have expanded the application of ${topic} into new areas, creating innovative solutions to complex problems.`
-        ]
-      }
-    ],
-    keyPoints: [
-      `${topic} consists of multiple interconnected elements that work together`,
-      `The historical development of ${topic} has shaped our current understanding`,
-      `There are numerous practical applications across different fields`,
-      `Understanding ${topic} enables prediction and control of related processes`,
-      `Modern research continues to expand our knowledge of ${topic}`
-    ],
-    examples: [
-      {
-        title: 'Practical Example 1',
-        description: `This example illustrates how ${topic} applies in a common scenario that you might encounter or observe in everyday situations.`
-      },
-      {
-        title: 'Practical Example 2',
-        description: `A more advanced application demonstrating the depth and versatility of ${topic} in solving complex problems.`
-      }
-    ],
-    relatedTopics: [
-      {
-        title: `History of ${topic}`,
-        description: `Explore how ${topic} evolved over time and the key figures who contributed to its development.`
-      },
-      {
-        title: `Advanced ${topic} Concepts`,
-        description: `Delve deeper into more complex aspects and theoretical frameworks.`
-      },
-      {
-        title: `${topic} in Modern Applications`,
-        description: `Discover how ${topic} is used in cutting-edge technologies and recent innovations.`
-      }
-    ]
-  };
 };
 
 export default TopicExplainer;

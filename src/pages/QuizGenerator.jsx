@@ -17,7 +17,7 @@ const QuizGenerator = () => {
     try {
       setIsLoading(true);
       
-      // Call the actual generateQuiz function from aiService
+      // Generate the quiz with the formData
       const quizData = await generateQuiz(formData);
       setQuiz(quizData);
       
