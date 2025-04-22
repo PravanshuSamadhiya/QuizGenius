@@ -15,8 +15,6 @@ const TopicExplainer = () => {
   const handleExplainTopic = async (formData) => {
     try {
       setIsLoading(true);
-      
-      // Actually call the explainTopic function from aiService
       const explanationData = await explainTopic(formData);
       setExplanation(explanationData);
       
