@@ -122,7 +122,7 @@ const TopicForm = ({ onExplainTopic, isLoading }) => {
           
           <Button 
   type="submit" 
-  className="w-full flex items-center justify-center h-12 bg-yellow-50 text-black"
+  className="w-full flex items-center justify-center h-12 bg-yellow-50 text-black rounded-full"
   disabled={isLoading}
 >
   <BrainCircuit className="mr-2 h-5 w-5 text-black" />

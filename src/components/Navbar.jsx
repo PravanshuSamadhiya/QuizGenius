@@ -58,9 +58,9 @@ const Navbar = () => {
               aria-label="Toggle mobile menu"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6 text-foreground" />
+                <X className="h-6 w-6 text-navyblue-50" />
               ) : (
-                <Menu className="h-6 w-6 text-foreground" />
+                <Menu className="h-6 w-6 text-navyblue-50" />
               )}
             </button>
           </div>
@@ -72,7 +72,7 @@ const Navbar = () => {
             <div className="flex flex-col space-y-2 px-2 pt-2 pb-3">
               <Link
                 to="/"
-                className="px-3 py-2 rounded-md text-base font-medium text-foreground hover:bg-muted"
+                className="px-3 py-2 rounded-md text-base font-medium text-navyblue-50 hover:text-yellow-50"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <div className="flex items-center">
@@ -82,7 +82,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/quiz"
-                className="px-3 py-2 rounded-md text-base font-medium text-quiz hover:bg-quiz/10"
+                className="px-3 py-2 rounded-md text-base font-medium text-navyblue-50 hover:text-yellow-50"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <div className="flex items-center">
@@ -92,7 +92,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/explain"
-                className="px-3 py-2 rounded-md text-base font-medium text-explainer hover:bg-explainer/10"
+                className="px-3 py-2 rounded-md text-base font-medium text-navyblue-50 hover:text-yellow-50"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 <div className="flex items-center">

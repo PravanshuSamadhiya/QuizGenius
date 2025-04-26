@@ -100,7 +100,7 @@ const TopicExplainer = () => {
 
       <footer className="bg-[#172554] text-white py-6 mt-16 border-t border-white/10">
         <div className="container max-w-6xl mx-auto px-4 text-center text-sm text-white/70">
-          © {new Date().getFullYear()} QuizGenius. All rights reserved.
+          © {new Date().getFullYear()} Torned Education. All rights reserved.
         </div>
       </footer>
     </div>

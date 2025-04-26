@@ -36,13 +36,13 @@ const QuizForm = ({ onGenerateQuiz, isLoading }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     if (!subject || !educationLevel) {
       // Simple validation
       alert('Please fill in the subject and education level');
       return;
     }
-    
+
     onGenerateQuiz({
       subject,
       educationLevel,
@@ -68,27 +68,27 @@ const QuizForm = ({ onGenerateQuiz, isLoading }) => {
                 required
               />
             </div>
-            
-            <div>
-  <Label htmlFor="education-level">Education Level *</Label>
-  <Select value={educationLevel} onValueChange={setEducationLevel} required>
-    <SelectTrigger
-      id="education-level"
-      className=" bg-navyblue-600 text-white "
-    >
-      <SelectValue placeholder="Select education level" />
-    </SelectTrigger>
-    <SelectContent className="bg-[#172554] text-white">
-      {educationLevels.map((level) => (
-        <SelectItem key={level.value} value={level.value}>
-          {level.label}
-        </SelectItem>
-      ))}
-    </SelectContent>
-  </Select>
-</div>
 
-            
+            <div>
+              <Label htmlFor="education-level">Education Level *</Label>
+              <Select value={educationLevel} onValueChange={setEducationLevel} required>
+                <SelectTrigger
+                  id="education-level"
+                  className=" bg-navyblue-600 text-white "
+                >
+                  <SelectValue placeholder="Select education level" />
+                </SelectTrigger>
+                <SelectContent className="bg-[#172554] text-white">
+                  {educationLevels.map((level) => (
+                    <SelectItem key={level.value} value={level.value}>
+                      {level.label}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+
             <div>
               <Label htmlFor="topics">Specific Topics (Optional)</Label>
               <Textarea
@@ -102,57 +102,57 @@ const QuizForm = ({ onGenerateQuiz, isLoading }) => {
                 Leave blank for a general quiz on the subject
               </p>
             </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4">
-  <div className="flex-1">
-    <Label htmlFor="question-count">Number of Questions</Label>
-    <Select value={questionCount} onValueChange={setQuestionCount}>
-      <SelectTrigger
-        id="question-count"
-        className="input-focus bg-navyblue-600 text-white "
-      >
-        <SelectValue />
-      </SelectTrigger>
-      <SelectContent className="bg-[#172554] text-white">
-        {questionCounts.map((count) => (
-          <SelectItem key={count} value={count}>
-            {count} questions
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
-  </div>
 
-              
+            <div className="flex flex-col sm:flex-row gap-4">
               <div className="flex-1">
-              <Label htmlFor="difficulty">Difficulty Level</Label>
-  <Select value={difficulty} onValueChange={setDifficulty}>
-    <SelectTrigger
-      id="difficulty"
-      className="input-focus bg-navyblue-600 text-white"
-    >
-      <SelectValue />
-    </SelectTrigger>
-    <SelectContent className="bg-[#172554] text-white">
-      {difficulties.map((diff) => (
-        <SelectItem key={diff.value} value={diff.value}>
-          {diff.label}
-        </SelectItem>
-      ))}
+                <Label htmlFor="question-count">Number of Questions</Label>
+                <Select value={questionCount} onValueChange={setQuestionCount}>
+                  <SelectTrigger
+                    id="question-count"
+                    className="input-focus bg-navyblue-600 text-white "
+                  >
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[#172554] text-white">
+                    {questionCounts.map((count) => (
+                      <SelectItem key={count} value={count}>
+                        {count} questions
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+
+
+              <div className="flex-1">
+                <Label htmlFor="difficulty">Difficulty Level</Label>
+                <Select value={difficulty} onValueChange={setDifficulty}>
+                  <SelectTrigger
+                    id="difficulty"
+                    className="input-focus bg-navyblue-600 text-white"
+                  >
+                    <SelectValue />
+                  </SelectTrigger>
+                  <SelectContent className="bg-[#172554] text-white">
+                    {difficulties.map((diff) => (
+                      <SelectItem key={diff.value} value={diff.value}>
+                        {diff.label}
+                      </SelectItem>
+                    ))}
                   </SelectContent>
                 </Select>
               </div>
             </div>
           </div>
-          
-          <Button 
-  type="submit" 
-  className=" w-full flex items-center justify-center h-12 bg-yellow-50 text-black"
-  disabled={isLoading}
->
-  <BookOpen className="mr-2 h-5 w-5 text-black" />
-  {isLoading ? 'Generating Quiz...' : 'Generate Quiz'}
-</Button>
+
+          <Button
+            type="submit"
+            className=" w-full flex items-center justify-center h-12 bg-yellow-50 text-black rounded-full"
+            disabled={isLoading}
+          >
+            <BookOpen className="mr-2 h-5 w-5 text-black" />
+            {isLoading ? 'Generating Quiz...' : 'Generate Quiz'}
+          </Button>
 
         </form>
       </CardContent>

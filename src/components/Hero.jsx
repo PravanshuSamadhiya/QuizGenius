@@ -17,13 +17,13 @@ const Hero = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in" style={{animationDelay: '0.4s'}}>
             <Link to="/quiz">
-              <Button className="bg-yellow-50 text-black hover:bg-yellow-50 text-lg px-8 py-6 h-auto flex items-center">
+              <Button className="bg-yellow-50 text-black hover:bg-yellow-50 text-lg px-8 py-6 h-auto flex items-center rounded-full">
                 <BookOpen className="mr-2 h-5 w-5" />
                 Generate Quiz
               </Button>
             </Link>
             <Link to="/explain">
-              <Button className="bg-navyblue-700 backdrop-blur-sm hover:bg-navyblue-700 text-white text-lg px-8 py-6 h-auto flex items-center">
+              <Button className="bg-navyblue-700 backdrop-blur-sm hover:bg-navyblue-700 text-white text-lg px-8 py-6 h-auto flex items-center rounded-full">
                 <BrainCircuit className="mr-2 h-5 w-5" />
                 Explain a Topic
               </Button>
