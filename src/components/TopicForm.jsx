@@ -65,17 +65,20 @@ const TopicForm = ({ onExplainTopic, isLoading }) => {
             </div>
             
             <div>
-              <Label htmlFor="education-level">Education Level</Label>
-              <Select value={educationLevel} onValueChange={setEducationLevel}>
-                <SelectTrigger id="education-level" className="input-focus">
-                  <SelectValue placeholder="Select education level (optional)" />
-                </SelectTrigger>
-                <SelectContent>
-                  {educationLevels.map((level) => (
-                    <SelectItem key={level.value} value={level.value}>
-                      {level.label}
-                    </SelectItem>
-                  ))}
+            <Label htmlFor="education-level">Education Level</Label>
+  <Select value={educationLevel} onValueChange={setEducationLevel}>
+    <SelectTrigger
+      id="education-level"
+      className="input-focus bg-navyblue-600 text-white "
+    >
+      <SelectValue placeholder="Select education level (optional)" />
+    </SelectTrigger>
+    <SelectContent className="bg-[#172554] text-white">
+      {educationLevels.map((level) => (
+        <SelectItem key={level.value} value={level.value}>
+          {level.label}
+        </SelectItem>
+      ))}
                 </SelectContent>
               </Select>
               <p className="text-sm text-muted-foreground mt-1">
@@ -98,30 +101,34 @@ const TopicForm = ({ onExplainTopic, isLoading }) => {
             </div>
             
             <div>
-              <Label htmlFor="explanation-style">Explanation Style</Label>
-              <Select value={explanationStyle} onValueChange={setExplanationStyle}>
-                <SelectTrigger id="explanation-style" className="input-focus">
-                  <SelectValue />
-                </SelectTrigger>
-                <SelectContent>
-                  {explanationStyles.map((style) => (
-                    <SelectItem key={style.value} value={style.value}>
-                      {style.label}
-                    </SelectItem>
-                  ))}
+            <Label htmlFor="explanation-style">Explanation Style</Label>
+  <Select value={explanationStyle} onValueChange={setExplanationStyle}>
+    <SelectTrigger
+      id="explanation-style"
+      className="input-focus bg-navyblue-600 text-white "
+    >
+      <SelectValue placeholder="Select explanation style" />
+    </SelectTrigger>
+    <SelectContent className="bg-[#172554] text-white">
+      {explanationStyles.map((style) => (
+        <SelectItem key={style.value} value={style.value}>
+          {style.label}
+        </SelectItem>
+      ))}
                 </SelectContent>
               </Select>
             </div>
           </div>
           
           <Button 
-            type="submit" 
-            className="btn-secondary w-full flex items-center justify-center h-12"
-            disabled={isLoading}
-          >
-            <BrainCircuit className="mr-2 h-5 w-5" />
-            {isLoading ? 'Generating Explanation...' : 'Explain This Topic'}
-          </Button>
+  type="submit" 
+  className="w-full flex items-center justify-center h-12 bg-yellow-50 text-black"
+  disabled={isLoading}
+>
+  <BrainCircuit className="mr-2 h-5 w-5 text-black" />
+  {isLoading ? 'Generating Explanation...' : 'Explain This Topic'}
+</Button>
+
         </form>
       </CardContent>
     </Card>

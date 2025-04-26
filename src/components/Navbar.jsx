@@ -18,32 +18,32 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-white shadow-sm sticky top-0 z-50">
-      <div className="container max-w-6xl mx-auto px-4">
+    <nav className=" shadow-sm sticky top-0 z-50 bg-[#172554] border-b-[2px] border-b-navyblue-800">
+      <div className="container max-w-6xl mx-auto px-4"> 
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <BrainCircuit className="h-8 w-8 text-primary" />
-              <span className="ml-2 text-xl font-bold text-foreground">QuizGenius</span>
+              <BrainCircuit className="h-8 w-8 text-white" />
+              <span className="ml-2 text-xl font-bold text-white">Torned Challenge</span>
             </Link>
           </div>
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-1">
             <Link to="/">
-              <Button variant="ghost" className="flex items-center">
+              <Button variant="ghost" className="flex items-center text-navyblue-50 hover:text-yellow-5">
                 <Home className="h-5 w-5 mr-2" />
                 Home
               </Button>
             </Link>
             <Link to="/quiz">
-              <Button variant="ghost" className="flex items-center text-quiz hover:bg-quiz/10">
+              <Button variant="ghost" className="flex items-center text-navyblue-50 hover:text-yellow-5">
                 <BookOpen className="h-5 w-5 mr-2" />
                 Quiz Generator
               </Button>
             </Link>
             <Link to="/explain">
-              <Button variant="ghost" className="flex items-center text-explainer hover:bg-explainer/10">
+              <Button variant="ghost" className="flex items-center text-navyblue-50 hover:text-yellow-5">
                 <BrainCircuit className="h-5 w-5 mr-2" />
                 Topic Explainer
               </Button>

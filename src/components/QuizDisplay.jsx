@@ -10,7 +10,6 @@ const QuizDisplay = ({ quiz, onReset }) => {
   const [selectedAnswers, setSelectedAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
 
-
   const questions = quiz?.questions || [];
 
   if (questions.length === 0) {
@@ -96,8 +95,8 @@ const QuizDisplay = ({ quiz, onReset }) => {
           <Card key={questionIndex} className={
             showResults
               ? selectedAnswers[questionIndex] === question.correctAnswerIndex
-                ? "border-green-200 bg-green-50"
-                : "border-red-200 bg-red-50"
+                ? "border-navyblue-500 bg-navyblue-700"
+                : "border-navyblue-600 bg-navyblue-700"
               : ""
           }>
             <CardHeader className="flex flex-row items-start gap-4 pb-2">
@@ -120,9 +119,9 @@ const QuizDisplay = ({ quiz, onReset }) => {
                     key={answerIndex}
                     className={`flex items-center space-x-2 p-2 rounded ${showResults && (
                         answerIndex === question.correctAnswerIndex
-                          ? "bg-green-100"
+                          ? "bg-green-400"
                           : selectedAnswers[questionIndex] === answerIndex
-                            ? "bg-red-100"
+                            ? "bg-red-500"
                             : ""
                       )
                       }`}

@@ -5,7 +5,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
+/* @layer base {
   :root {
     --background: 260 50% 98%;
     --foreground: 260 10% 15%;
@@ -96,4 +96,64 @@
   .card-gradient-blue {
     @apply bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20;
   }
-}
+
+
+} */
+
+@layer components {
+  /* .hero-gradient {
+    @apply bg-gradient-to-br from-purple-500 to-indigo-600;
+  } */
+  
+  /* .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary/50 focus:border-primary;
+  }
+   */
+  .btn-primary {
+    @apply  text-black transition-colors;
+  }
+  
+  /* .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90 transition-colors;
+  } */
+
+  .page-container {
+    @apply container max-w-6xl mx-auto px-4 py-8 md:py-12;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl   mb-6;
+  }
+  
+  .section-subtitle {
+    @apply text-xl  mb-8 max-w-3xl;
+  }
+
+  .gradient_color_aboutPage{
+    background: radial-gradient(circle, red, yellow);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .gradient_color3{
+    background: linear-gradient(to right, #90EE90, #32CD32);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+
+  /* .card-gradient-purple {
+    @apply bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20;
+  }
+  
+  .card-gradient-blue {
+    @apply bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20;
+  } */
+
+
+} 

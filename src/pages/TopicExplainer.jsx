@@ -39,47 +39,53 @@ const TopicExplainer = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[#172554] text-white">
       <Navbar />
-      
+
       <main className="flex-grow">
-        <div className="page-container">
-          <h1 className="section-title">AI Topic Explainer</h1>
-          <p className="section-subtitle">
+        <div className="page-container py-12">
+          <h1 className="text-4xl font-bold text-center gradient_color_aboutPage mb-4">Torned SmartExplain</h1>
+          <p className="text-center text-white/80 text-lg">
             Get clear, in-depth explanations on any topic or concept
           </p>
-          
-          <div className="mt-8">
+
+          <div className="mt-10">
             {!explanation ? (
               <div className="max-w-3xl mx-auto">
-                <Tabs defaultValue="explain">
-                  <TabsList className="grid w-full grid-cols-2 mb-8">
-                    <TabsTrigger value="explain" className="flex items-center">
-                      <BrainCircuit className="h-4 w-4 mr-2" />
+                <Tabs defaultValue="explain" className="w-full">
+                  <TabsList className="grid grid-cols-2 bg-navyblue-800 rounded-lg shadow-sm mb-8">
+                    <TabsTrigger 
+                      value="explain" 
+                      className="flex items-center justify-center gap-2 py-2 text-white data-[state=active]:bg-orange-400 data-[state=active]:text-black rounded-md transition"
+                    >
+                      <BrainCircuit className="h-4 w-4" />
                       Explain a Topic
                     </TabsTrigger>
-                    <TabsTrigger value="about" className="flex items-center">
-                      <Info className="h-4 w-4 mr-2" />
+                    <TabsTrigger 
+                      value="about" 
+                      className="flex items-center justify-center gap-2 py-2 text-white data-[state=active]:bg-orange-400 data-[state=active]:text-black rounded-md transition"
+                    >
+                      <Info className="h-4 w-4" />
                       How It Works
                     </TabsTrigger>
                   </TabsList>
-                  
-                  <TabsContent value="explain" className="animate-fade-in">
+
+                  <TabsContent value="explain" className="animate-fade-in bg-navyblue-600 p-6 rounded-xl shadow-lg">
                     <TopicForm onExplainTopic={handleExplainTopic} isLoading={isLoading} />
                   </TabsContent>
-                  
-                  <TabsContent value="about" className="animate-fade-in bg-white p-6 rounded-lg shadow-sm">
-                    <h3 className="text-xl font-semibold mb-4">How the Topic Explainer Works</h3>
-                    <div className="space-y-4">
+
+                  <TabsContent value="about" className="animate-fade-in bg-navyblue-600 p-6 rounded-xl shadow-lg">
+                    <h3 className="text-2xl font-semibold mb-4 text-yellow-50">How the Topic Explainer Works</h3>
+                    <div className="space-y-4 text-white/90">
                       <p>Our AI-powered Topic Explainer helps you understand any concept, subject, or idea with clear, well-structured explanations. Here's what makes it special:</p>
                       
-                      <ul className="list-disc pl-5 space-y-2">
-                        <li><span className="font-medium">Educational Focus:</span> Explanations are designed to teach, not just inform</li>
-                        <li><span className="font-medium">Customizable Detail Level:</span> Get explanations that match your knowledge needs</li>
-                        <li><span className="font-medium">Visual Organization:</span> Content is structured for easy comprehension</li>
-                        <li><span className="font-medium">Examples & Illustrations:</span> Learn through relatable examples</li>
+                      <ul className="list-disc pl-6 space-y-2">
+                        <li><span className="font-semibold text-orange-300">Educational Focus:</span> Explanations are designed to teach, not just inform</li>
+                        <li><span className="font-semibold text-orange-300">Customizable Detail Level:</span> Get explanations that match your knowledge needs</li>
+                        <li><span className="font-semibold text-orange-300">Visual Organization:</span> Content is structured for easy comprehension</li>
+                        <li><span className="font-semibold text-orange-300">Examples & Illustrations:</span> Learn through relatable examples</li>
                       </ul>
-                      
+
                       <p>Simply enter the topic you want explained, customize the options if needed, and our AI will generate a comprehensive explanation!</p>
                     </div>
                   </TabsContent>
@@ -91,15 +97,10 @@ const TopicExplainer = () => {
           </div>
         </div>
       </main>
-      
-      {/* Footer */}
-      <footer className="bg-foreground text-white py-6 mt-16">
-        <div className="container max-w-6xl mx-auto px-4">
-          <div className="flex flex-col md:flex-row items-center justify-between">
-            <div className="text-sm text-white/70">
-              © {new Date().getFullYear()} QuizGenius. All rights reserved.
-            </div>
-          </div>
+
+      <footer className="bg-[#172554] text-white py-6 mt-16 border-t border-white/10">
+        <div className="container max-w-6xl mx-auto px-4 text-center text-sm text-white/70">
+          © {new Date().getFullYear()} QuizGenius. All rights reserved.
         </div>
       </footer>
     </div>
