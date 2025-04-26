@@ -30,7 +30,7 @@ const Navbar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-1">
-            <Link to="/">
+            <Link to="https://torned-site-fronthend.vercel.app/">
               <Button variant="ghost" className="flex items-center text-navyblue-50 hover:text-yellow-5">
                 <Home className="h-5 w-5 mr-2" />
                 Home
