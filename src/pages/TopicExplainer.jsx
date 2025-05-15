@@ -44,7 +44,7 @@ const TopicExplainer = () => {
 
       <main className="flex-grow">
         <div className="page-container py-12">
-          <h1 className="text-4xl font-bold text-center gradient_color_aboutPage mb-4">Torned SmartExplain</h1>
+          <h1 className="text-4xl font-bold text-center gradient_color_aboutPage mb-4">MindCrafter SmartExplain</h1>
           <p className="text-center text-white/80 text-lg">
             Get clear, in-depth explanations on any topic or concept
           </p>
@@ -100,7 +100,7 @@ const TopicExplainer = () => {
 
       <footer className="bg-[#172554] text-white py-6 mt-16 border-t border-white/10">
         <div className="container max-w-6xl mx-auto px-4 text-center text-sm text-white/70">
-          © {new Date().getFullYear()} Torned Education. All rights reserved.
+          © {new Date().getFullYear()} MindCrafter. All rights reserved.
         </div>
       </footer>
     </div>

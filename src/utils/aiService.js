@@ -1,6 +1,6 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Add debug logging for API key
+
 console.log("API Key loaded:", import.meta.env.VITE_GEMINI_API_KEY ? "Yes" : "No");
 
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY); 

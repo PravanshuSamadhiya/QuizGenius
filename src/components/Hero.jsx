@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { BookOpen, BrainCircuit } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Link } from 'react-router-dom';
@@ -10,7 +8,7 @@ const Hero = () => {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-            Learn Smarter with Torned Edu
+            Learn Smarter with MindCrafter
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-3xl animate-fade-in text-orange-200" style={{animationDelay: '0.2s'}}>
             Generate custom quizzes and get clear topic explanations with our AI-powered learning platform

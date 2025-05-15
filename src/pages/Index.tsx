@@ -102,10 +102,10 @@ const Index = () => {
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="flex items-center mb-4 md:mb-0">
               <BrainCircuit className="h-6 w-6" />
-              <span className="ml-2 text-lg font-bold">Torned Challenge</span>
+              <span className="ml-2 text-lg font-bold">MindCrafter</span>
             </div>
             <div className="text-sm text-white/70">
-              © {new Date().getFullYear()} Torned Education. All rights reserved.
+              © {new Date().getFullYear()} MindCrafter. All rights reserved.
             </div>
           </div>
         </div>

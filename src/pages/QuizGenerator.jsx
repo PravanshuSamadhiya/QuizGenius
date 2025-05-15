@@ -43,7 +43,7 @@ const QuizGenerator = () => {
       
       <main className="flex-grow">
         <div className="page-container py-12">
-          <h1 className="text-4xl font-bold text-center gradient_color_aboutPage mb-4">QuizCraft By Torned</h1>
+          <h1 className="text-4xl font-bold text-center gradient_color_aboutPage mb-4">QuizCraft By MindCrafter</h1>
           <p className="text-center text-white/80 text-lg">
             Create custom quizzes for any subject and education level in seconds
           </p>
@@ -99,7 +99,7 @@ const QuizGenerator = () => {
 
       <footer className="bg-[#172554] text-white py-6 mt-16 border-t border-white/10">
         <div className="container max-w-6xl mx-auto px-4 text-center text-sm text-white/70">
-          © {new Date().getFullYear()} tornedEdu. All rights reserved.
+          © {new Date().getFullYear()} MindCrafter. All rights reserved.
         </div>
       </footer>
     </div>
